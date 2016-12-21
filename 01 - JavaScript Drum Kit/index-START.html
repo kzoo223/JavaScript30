@@ -59,6 +59,20 @@
 
 <script>
 
+ window.addEventListener('keydown', function(e){
+  console.log(e.keyCode)
+
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+  
+  console.log(audio);
+  if(!audio){
+    return;
+  }
+  audio.currentTime=0; //rewinds to start of the sound
+  audio.play(); //if you just use audio.play it waits until end of sound, use current time 0 to set to beginning
+
+ });
+
 </script>
 
 
